@@ -10,7 +10,7 @@ A full-stack web application for managing email campaigns with profile and list 
 - **Email Service**: Postmark (planned integration)
 
 ## 📁 Project Structure
-
+```
 emailWeb/
 ├── backend/ # Flask backend application
 │ ├── app.py # Main Flask application
@@ -25,7 +25,7 @@ emailWeb/
 ├── src/
 ├── public/
 └── package.json
-
+```
 
 ## 🚀 Quick Start
 
@@ -37,19 +37,16 @@ emailWeb/
 
 ### Backend Setup
 
-1. **Navigate to backend directory:**
-   ```bash
-   cd backend
-   ```
+1. **Create and Activate virtual environment:**
 
-2. **Activate virtual environment:**
-   ```bash
-   source ../emailweb/bin/activate
-   ```
-
-3. **Install dependencies:**
+2. **Install dependencies:**
    ```bash
    pip install -r ../requirements.txt
+   ```
+
+3. **Navigate to backend directory:**
+   ```bash
+   cd backend
    ```
 
 4. **Initialize database:**
