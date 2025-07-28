@@ -1,0 +1,68 @@
+---
+alwaysApply: false
+---
+# Email Campaign Web App - Feature Development Rules
+
+## MVP Scope Definition
+**Core Features (Must Implement First):**
+- Profile CRUD with email/name/custom_fields (JSON storage)
+- List CRUD with many-to-many profile relationships
+- Campaign CRUD with scheduling and Postmark integration
+- Email logging with Postmark webhook handling
+- Basic UI for profile/list/campaign management
+
+**Technical Requirements:**
+- SQLite database with proper indexing
+- UTC timestamp handling throughout
+- Try-except blocks for all external API calls
+- Comprehensive error logging
+- Stateless Flask app design
+- Celery for async task processing
+
+## Feature Implementation Guidelines
+
+### 1. Database-First Approach
+- All features must have proper database models before UI implementation
+- Use SQLite for development, PostgreSQL for production
+- Implement proper indexing for performance
+- Store all timestamps in UTC
+
+### 2. API Design Standards
+- RESTful CRUD endpoints: GET, POST, PUT, DELETE
+- Pagination for all list endpoints
+- Bulk operations for profile-list relationships
+- Webhook endpoints for external service integration
+- Proper HTTP status codes and error responses
+
+### 3. UI/UX Patterns
+- List management with search/filter capabilities
+- Campaign editor with rich text support
+- Email log viewer with filtering
+- Profile detail views with event history
+- Responsive design for mobile/desktop
+
+### 4. External Integration
+- Postmark API for email sending
+- Webhook handling for delivery status updates
+- Timeout and retry logic for all external calls
+- Proper error handling for API failures
+
+### 5. Performance Requirements
+- Async processing for long-running tasks
+- Database query optimization (avoid N+1)
+- Caching for frequently accessed data
+- Horizontal scaling preparation
+
+### 6. Testing Strategy
+- Unit tests for individual features
+- Integration tests for dependent features
+- API endpoint testing
+- Error scenario testing
+
+## Implementation Priority Order
+1. Database models and migrations
+2. Core CRUD APIs (profiles, lists, campaigns)
+3. Postmark integration and email sending
+4. Webhook handling and email logging
+5. Basic UI for all core features
+6. Advanced features (flows, analytics)
